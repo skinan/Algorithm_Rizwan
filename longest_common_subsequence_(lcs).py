@@ -1,8 +1,8 @@
-# longest common subsequent algorithm
+# longest common subsequence algorithm
 # Dynamic Programming Approach
 
 
-def longest_common_subsequent(x, y):
+def longest_common_subsequence(x, y):
 
     m = len(x)  # Get the length of the first word or base word
     n = len(y)  # Get the length of the second word or comparing word
@@ -28,20 +28,20 @@ def longest_common_subsequent(x, y):
             else:
                 loc[i][j] = max(loc[i - 1][j], loc[i][j - 1])
 
-    print("MATRIX ACCORDING TO LONGEST COMMON SUBSEQUENT ALGORITHM: \n ")
+    print("MATRIX ACCORDING TO LONGEST COMMON SUBSEQUENCE ALGORITHM: \n ")
 
     for i in range(n + 1):
         print(loc[i])
 
     print("\n\n")
-    print("LENGTH OF LONGEST COMMON SUBSEQUENT = ", loc[n][m])
+    print("LENGTH OF LONGEST COMMON SUBSEQUENCE = ", loc[n][m])
     print("\n\n")
 
     i = len(y)
     j = len(x)
     lcs = ""
 
-    # BACKTRACKING TO FIND THE LONGEST COMMON SUBSEQUENT
+    # BACKTRACKING TO FIND THE LONGEST COMMON SUBSEQUENCE
 
     temp = True
 
@@ -64,7 +64,7 @@ def main():
     y = "stone"  # y = COMPARING WORD
 
     # CALLING THE FUNCTION
-    print("THE LCS WORD IS: ", longest_common_subsequent(x, y))
+    print("THE LCS WORD IS: ", longest_common_subsequence(x, y))
 
 
 if __name__ == '__main__':
